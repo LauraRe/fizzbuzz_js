@@ -25,3 +25,11 @@ They both compare for equality but while `===` checks for both value and type id
 3 === '3' // false   
 3 == '3'  // true
 ```  
+
+## Question 4
+
+### Explain why we are moving `number % 5 === 0` to the top.
+
+`number % 5 === 0` has to be moved to the top if we want that statement to be evaluated first.   
+In fact, the `if` statement returns the value of the first statement that equals to `true`.   
+For instance, if the value is divisible by both 5 and 3, the value returned will be the one associated with 5 ('Buzz'). 
