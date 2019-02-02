@@ -33,3 +33,69 @@ They both compare for equality but while `===` checks for both value and type id
 `number % 5 === 0` has to be moved to the top if we want that statement to be evaluated first.   
 In fact, the `if` statement returns the value of the first statement that equals to `true`.   
 For instance, if the value is divisible by both 5 and 3, the value returned will be the one associated with 5 ('Buzz'). 
+
+## Question 5
+
+### Explain the difference between feature and unit test.
+
+A unit test is used to test small pieces of code (units) in an isolated environment.
+
+A feature test is used to test the functionality of the entire application. It mimics the user behaviour as much as possible.
+
+## Question 6 
+
+### Explain what the following code does:
+```javascript
+describe('User can input a value and get FizzBuzz results', () => {
+    before(async () => {
+        await browser.init()
+        await browser.visitPage('http://localhost:8080/')
+    })
+
+    beforeEach(async () => {
+        await browser.page.reload();
+    })
+
+    after(async () => {
+        await browser.close();
+    })
+})
+```
+* Before the tests execution wait for the browser to initialise and visit the server's root path (http://localhost:8080/).   
+* Before each test reload the browser's page.  
+* Close the browser when the test is finished.
+
+## Question 7
+
+### Explain what expectations in the context of testing are:
+
+Expectations are used to compare an expected output (set in the test) with the actual output (given by your code).   
+The test passes if expected output equals actual output, otherwise it fails.  
+
+## Question 8
+
+### Write a line to line explanation of what is happening in the following code:
+```javascript
+<script src="./js/fizz-buzz.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                let button = document.getElementById('button')
+                let displayDiv = document.getElementById('display_answer')
+                button.addEventListener('click', () => {
+                    let value = document.getElementById('value').value
+                    let fizzBuzz = new FizzBuzz
+                    let result = fizzBuzz.check(value)
+                    displayDiv.innerHTML = result;
+                })
+            })
+        </script>
+```
+* `src` stands for 'source' and it refers to the JS file that will be executed in the `script` tag when the page is loaded. It is possible to write code inside the `script` tag instead of loading a file.
+* The `document.addEventListener` is a browser built-in method that is 'receptive' for a particular event/action. In this case, when the DOM content is loaded, the callback function will:
+    * Store the element with id equal to 'button' in a variable called button;
+    * Store the element with id equal to 'display_answer' in a variable called displayDiv.
+    * When the button is clicked, the callback function will:
+        * Store the element with id equal to 'value' in a variable called value;
+        * Create a fizzBuzz instance;
+        * Store the result of calling the `check` method with `value` in the variable result;
+        * Display the result in the div section (id=display_answer) of the HTML page.
