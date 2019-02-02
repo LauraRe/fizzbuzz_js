@@ -14,3 +14,14 @@ eval( fizzBuzz + `\nexports.FizzBuzz = FizzBuzz;`)
 ### Why are we placing `let fizzBuzz = new FizzBuzz` outside the `it` block?
 
 So that we can use the newly created fizzBuzz instance for all the it statements inside the describe block.
+
+## Question 3
+
+### Explain the difference between `===` and `==` in JS.
+
+They both compare for equality but while `===` checks for both value and type identity, `==` will check the value identity after performing (if necessary) type conversion.
+
+```javascript
+3 === '3' // false   
+3 == '3'  // true
+```  
