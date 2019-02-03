@@ -99,3 +99,9 @@ The test passes if expected output equals actual output, otherwise it fails.
         * Create a fizzBuzz instance;
         * Store the result of calling the `check` method with `value` in the variable result;
         * Display the result in the div section (id=display_answer) of the HTML page.
+
+## Question 9
+
+### Explain what a CDN (Content Delivery Network) is:
+
+A CDN is a system of distributed servers (network) that deliver Web content to a user based on the geographic location of the user, the origin of the webpage and the content delivery server. The servers nearest to the website visitor respond to the request.
